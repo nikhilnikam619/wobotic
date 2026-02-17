@@ -1,5 +1,6 @@
-export default function Tabledata(){
+export default function Tabledata({data,error,loading}){
 
+    // console.log(data)
 
     return(
         <>
@@ -16,16 +17,22 @@ export default function Tabledata(){
     </tr>
   </thead>
   <tbody>
+        {/* {data.map((ele,idx)=>( */}
+
     <tr>
-      <td> <span><input type="checkbox" /></span> Nikhil</td>
-      <td>nikhil@gmail.com</td>
+            <>
+      <td > <span><input type="checkbox" /></span> Camera</td>
+     <td>nikhil@gmail.com</td>
       <td>Frontend Developer</td>
       <td>Frontend Developer</td>
       <td>Frontend Developer</td>
       <td>Frontend Developer</td>
       <td>Frontend Developer</td>
-      <td>Frontend Developer</td>   
+            </>
+ 
     </tr>
+        {/* ))} */}
+
   </tbody>
 </table>
 
