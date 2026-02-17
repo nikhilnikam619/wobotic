@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    max-height: 60px;
+    align-items: center;
+    padding:6px;
+}
+
+.Camera{
+    display: flex;
+    flex-direction: column;
+    
+}
