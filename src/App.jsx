@@ -39,6 +39,7 @@ const totalPages = Math.ceil(data.length / itemperpage);
       currentPage={currentPage}
       totalPages={totalPages}
       setCurrentPage={setCurrentPage}
+      itemperpage={itemperpage}
     />
   </>
 )}
