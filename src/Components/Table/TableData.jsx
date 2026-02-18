@@ -2,6 +2,14 @@ import "./TableData.css"
 
 function TableData({ data }) {
   return (
+   <>
+      
+       
+  <div style={{background: "#FFFFFF"}}>
+
+      <select name="" id=""><option value="">Location</option></select>
+         <select name="" id=""><option value="">Status</option></select>
+  </div>
     <table className="camera-table">
       <thead>
         <tr>
@@ -58,6 +66,8 @@ function TableData({ data }) {
         ))}
       </tbody>
     </table>
+
+    </>
   );
 }
 

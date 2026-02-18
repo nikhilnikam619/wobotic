@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 function useApiurl(url) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
   useEffect(() => {
     const getapi = async () => {
       try {
@@ -26,7 +24,6 @@ function useApiurl(url) {
         console.log(result.data)
         setData(result.data.cameras);
       } catch (e) {
-        setError(e.message);
         console.log("Error in API:", e);
       } finally {
         setLoading(false);
@@ -34,9 +31,9 @@ function useApiurl(url) {
     };
 
     getapi();
-  }, [url,data]); 
+  }, [url]); 
 
-  return { data, loading, error };
+  return { data, loading };
 }
 
 export default useApiurl;
