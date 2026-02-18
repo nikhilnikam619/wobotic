@@ -1,42 +1,64 @@
-export default function Tabledata({data,error,loading}){
+import "./TableData.css"
 
-    // console.log(data)
+function TableData({ data }) {
+  return (
+    <table className="camera-table">
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" />
+          </th>
+          <th>NAME</th>
+          <th>LOCATION</th>
+          <th>RECORDER</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
 
-    return(
-        <>
-        <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Health</th>
-      <th>Location</th>
-      <th>Recorder</th>
-      <th>Tasks</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-        {/* {data.map((ele,idx)=>( */}
+      <tbody>
+        {data.map((camera) => (
+          <tr key={camera.id}>
+            <td>
+              <input type="checkbox" />
+            </td>
 
-    <tr>
-            <>
-      <td > <span><input type="checkbox" /></span> Camera</td>
-     <td>nikhil@gmail.com</td>
-      <td>Frontend Developer</td>
-      <td>Frontend Developer</td>
-      <td>Frontend Developer</td>
-      <td>Frontend Developer</td>
-      <td>Frontend Developer</td>
-            </>
- 
-    </tr>
-        {/* ))} */}
+            <td>
+              <div className="camera-name">
+                <span
+                  className={`dot ${
+                    camera.status === "active"
+                      ? "green"
+                      : camera.status === "inactive"
+                      ? "gray"
+                      : "orange"
+                  }`}
+                ></span>
+                {camera.name}
+              </div>
+            </td>
 
-  </tbody>
-</table>
+            <td>{camera.location}</td>
 
-        </>
-    )
+            <td>{camera.model || "N/A"}</td>
 
+            <td>
+              <span
+                className={`status-badge ${
+                  camera.status === "active"
+                    ? "active"
+                    : camera.status === "inactive"
+                    ? "inactive"
+                    : "maintenance"
+                }`}
+              >
+                {camera.status}
+              </span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
+
+export default TableData;

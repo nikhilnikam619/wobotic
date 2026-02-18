@@ -24,7 +24,7 @@ function useApiurl(url) {
 
         const result = await resp.json();
         console.log(result.data)
-        setData(result.data);
+        setData(result.data.cameras);
       } catch (e) {
         setError(e.message);
         console.log("Error in API:", e);
